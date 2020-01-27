@@ -5,6 +5,7 @@
    *    Licensed under the GNU GPLv3
    *    https://github.com/jpsheehan/Stuff-Your-Opinion
    *    https://addons.mozilla.org/en-US/firefox/addon/stuff-your-opinion/
+   *    https://chrome.google.com/webstore/detail/stuff-your-opinion/jhibdleohknpbgeihkplcjmaaphlmemo
    *
    *    A simple Firefox extension to hide opinions, reviews, and sponsored content on Stuff.co.nz.
    *
