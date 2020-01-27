@@ -41,7 +41,7 @@
   };
 
   const getAllArticles = function() {
-    return document.querySelectorAll(".display-asset");
+    return document.querySelectorAll(".display-asset, .section_headlines p");
   };
 
   const isArticleAnOpinion = function(article) {
