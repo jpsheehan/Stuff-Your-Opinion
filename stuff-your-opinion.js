@@ -7,15 +7,31 @@
    *    https://addons.mozilla.org/en-US/firefox/addon/stuff-your-opinion/
    *    https://chrome.google.com/webstore/detail/stuff-your-opinion/jhibdleohknpbgeihkplcjmaaphlmemo
    *
-   *    A simple Firefox extension to hide opinions, reviews, and sponsored content on Stuff.co.nz.
+   *    A simple Firefox and Chrome extension to hide opinions, reviews, and sponsored content on Stuff.co.nz.
    *
    */
+
+  /**
+   * The default opacity of the opinions.
+   */
   const styleOpacity = 0.05;
+
+  /**
+   * The opacity of opinions when hovered.
+   */
   const styleHoverOpacity = 1.0;
+
+  /**
+   * The time taken (in seconds) to change transparency.
+   */
   const styleTransitionTime = 0.3;
 
-  // create the custom style
-  function createStyleElement() {
+  /**
+   * Appends a style block to the page.
+   * The style block adds transparency and fading to
+   * elements with the class "opinion".
+   */
+  const createStyleElement = function() {
     const style = document.createElement("style");
     style.textContent = `
     /* For the "Stuff Your Opinion" Firefox extension. */
@@ -26,24 +42,37 @@
         transition: opacity ${styleTransitionTime}s;
     }
     
+    /* Change opacity back to normal on hover. */
     .opinion:hover {
         opacity: ${styleHoverOpacity};
     }
     `;
     document.body.appendChild(style);
-  }
+  };
 
-  // sets the opinion class of the parent element if it has not been set
+  /**
+   * Adds the class "opinion" to the element if it doesn't already exist.
+   * @param {HTMLElement} el
+   */
   const setOpinionClass = function(el) {
     if (!el.classList.contains("opinion")) {
       el.classList.add("opinion");
     }
   };
 
+  /**
+   * Gets an array of all articles that could potentially be opinions.
+   * @returns {HTMLElement[]}
+   */
   const getAllArticles = function() {
     return document.querySelectorAll(".display-asset, .section_headlines p");
   };
 
+  /**
+   * Determines whether or not the article summary is an opinion.
+   * @param {HTMLElement} article
+   * @returns {boolean}
+   */
   const isArticleAnOpinion = function(article) {
     return (
       article.innerText.includes("OPINION:") ||
@@ -54,16 +83,27 @@
     );
   };
 
+  /**
+   * Gets a list of all article summaries that are considered to be opinions.
+   * @returns {HTMLElement[]}
+   */
   const getOpinionArticles = function() {
     return [...getAllArticles()].filter(isArticleAnOpinion);
   };
 
-  // add the style block to the page
-  createStyleElement();
+  /**
+   * Calls the functions to hide opinions.
+   */
+  const init = function() {
+    // add the style block to the page
+    createStyleElement();
 
-  // get all of the opinion articles
-  const opinions = getOpinionArticles();
+    // get all of the opinion articles
+    const opinions = getOpinionArticles();
 
-  // set their class to be "opinion"
-  opinions.forEach(setOpinionClass);
+    // set their class to be "opinion"
+    opinions.forEach(setOpinionClass);
+  };
+
+  init();
 })();
