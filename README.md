@@ -18,10 +18,10 @@ An extension for Firefox and Google Chrome for hiding opinions, reviews, and spo
 
 ## History
 
-**Version Dev**
+**Version 0.1.1**
 
 - Added section headlines to the list of articles to be hidden.
 
-**Version 0.1**
+**Version 0.1.0**
 
 - MVP
