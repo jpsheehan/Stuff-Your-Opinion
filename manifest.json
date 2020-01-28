@@ -6,7 +6,8 @@
   "description": "Hides opinions, reviews, and sponsored content on stuff.co.nz.",
 
   "icons": {
-    "256": "icons/icon-256.png"
+    "256": "icons/icon-256.png",
+    "128": "icons/icon-128.png"
   },
 
   "content_scripts": [

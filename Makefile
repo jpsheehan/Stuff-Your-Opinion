@@ -1,4 +1,4 @@
-FILES=manifest.json icons/icon-256.png stuff-your-opinion.js
+FILES=manifest.json icons/icon-256.png icons/icon-128.png stuff-your-opinion.js
 FIREFOX_OUT=stuff-your-opinion.xpi
 
 all: firefox
