@@ -79,7 +79,8 @@
       article.innerText.includes("COMMENT:") ||
       article.innerText.includes("REVIEW:") ||
       article.querySelector("img.headline-flag-stuff-nation") !== null ||
-      article.querySelector(".sponsored-icon-text") !== null
+      article.querySelector(".sponsored-icon-text") !== null ||
+      article.querySelector(".assignment_icon") !== null
     );
   };
 
