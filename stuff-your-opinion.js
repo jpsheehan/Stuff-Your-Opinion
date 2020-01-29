@@ -12,6 +12,11 @@
    */
 
   /**
+   * The regex pattern for extracting article ids from the URL.
+   */
+  const urlPattern = /\/([0-9]{4,})\/?/;
+
+  /**
    * The default opacity of the opinions.
    */
   const styleOpacity = 0.05;
@@ -65,7 +70,9 @@
    * @returns {HTMLElement[]}
    */
   const getAllArticles = function() {
-    return document.querySelectorAll(".display-asset, .section_headlines p");
+    return document.querySelectorAll(
+      ".display-asset, .section_headlines p, #viewed li, #commented p"
+    );
   };
 
   /**
@@ -92,6 +99,29 @@
     return [...getAllArticles()].filter(isArticleAnOpinion);
   };
 
+  const getArticleId = function(article) {
+    const url = article.querySelector("a").href;
+    const results = urlPattern.exec(url);
+    if (results !== null && results.length == 2) {
+      return results[1];
+    } else {
+      return null;
+    }
+  };
+
+  /**
+   *
+   * @param {String[]} ids An array of article ids.
+   * @returns {Promise<Object>} An object containing the stored values.
+   */
+  const storeGetArticleStatuses = function(ids) {
+    return browser.storage.local.get(ids);
+  };
+
+  const storeSetArticleStatus = function(id, isOpinion) {
+    return browser.storage.local.set({ [id]: isOpinion });
+  };
+
   /**
    * Calls the functions to hide opinions.
    */
@@ -104,7 +134,15 @@
 
     // set their class to be "opinion"
     opinions.forEach(setOpinionClass);
+    opinions
+      .map(getArticleId)
+      .filter(id => id !== null)
+      .forEach(id => storeSetArticleStatus(id, true));
   };
 
+  console.log("SYO START");
+  const ids = [...getAllArticles()].map(getArticleId).filter(id => id !== null);
+  storeGetArticleStatuses(ids).then(foo => console.log("Stored data:", foo));
   init();
+  console.log("SYO FINISH");
 })();
