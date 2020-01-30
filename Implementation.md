@@ -45,14 +45,14 @@ This is useful as we can pull the intro text for each article and check if it ma
 The id for each article can be extracted from its hyperlink using the following regular expression:
 
 ```re
-\/([0-9]{4,})\/?
+\/([0-9]+)\/?
 ```
 
 This regular expression fails on any "Stuff Play" articles as these have a different URL scheme to other articles on the site. However, we consider "Stuff Play" articles to not be opinion pieces at this stage.
 
 In order to not hammer the API server too hard (and to improve the performance of the extension), we should cache the results of all detections in local storage.
 
-### Pseudo-Code
+## Pseudo-Code
 
 The following pseudo-code should cover all the cases we care about using both passive and active detection methods and caching.
 When an article is marked, it has custom class added to its `classList` member.

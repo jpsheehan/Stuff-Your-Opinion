@@ -14,7 +14,7 @@
   /**
    * The regex pattern for extracting article ids from the URL.
    */
-  const urlPattern = /\/([0-9]{4,})\/?/;
+  const urlPattern = /\/([0-9]+)\/?/;
 
   /**
    * The default opacity of the opinions.
