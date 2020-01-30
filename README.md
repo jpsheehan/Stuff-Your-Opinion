@@ -18,7 +18,7 @@ An extension for Firefox and Google Chrome for hiding opinions, reviews, and spo
 
 ## History
 
-**Version 0.1.2 (Development)**
+**Version 0.1.2**
 
 - Added another rule for detecting Stuff Nation articles.
 

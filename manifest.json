@@ -1,23 +1,17 @@
 {
   "manifest_version": 2,
   "name": "Stuff Your Opinion",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Hides opinions, reviews, and sponsored content on stuff.co.nz.",
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "icons": {
     "256": "icons/icon-256.png",
     "128": "icons/icon-128.png"
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*.stuff.co.nz/*"
-      ],
-      "js": [
-        "stuff-your-opinion.js"
-      ]
+      "matches": ["*://*.stuff.co.nz/*"],
+      "js": ["stuff-your-opinion.js"]
     }
   ]
 }

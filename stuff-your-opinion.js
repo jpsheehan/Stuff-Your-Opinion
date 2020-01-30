@@ -140,9 +140,5 @@
       .forEach(id => storeSetArticleStatus(id, true));
   };
 
-  console.log("SYO START");
-  const ids = [...getAllArticles()].map(getArticleId).filter(id => id !== null);
-  storeGetArticleStatuses(ids).then(foo => console.log("Stored data:", foo));
   init();
-  console.log("SYO FINISH");
 })();
