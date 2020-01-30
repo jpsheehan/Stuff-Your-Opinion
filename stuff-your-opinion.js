@@ -134,10 +134,10 @@
 
     // set their class to be "opinion"
     opinions.forEach(setOpinionClass);
-    opinions
-      .map(getArticleId)
-      .filter(id => id !== null)
-      .forEach(id => storeSetArticleStatus(id, true));
+    // opinions
+    //   .map(getArticleId)
+    //   .filter(id => id !== null)
+    //   .forEach(id => storeSetArticleStatus(id, true));
   };
 
   init();
