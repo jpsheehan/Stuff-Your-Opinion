@@ -14,9 +14,13 @@ An extension for Firefox and Google Chrome for hiding opinions, reviews, and spo
 
 ## To Do:
 
-- Find a way to hide articles summaries that are not tagged.
+- Provide options for the user to allow certain article types to be displayed.
 
 ## History
+
+**Version 0.1.3**
+
+- Implemented active detection of article types as per "Implementation.md".
 
 **Version 0.1.2**
 
