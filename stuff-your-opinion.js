@@ -136,6 +136,10 @@
     )];
   };
 
+  const getLateLoadedArticles = function () {
+    return [...document.querySelectorAll("#commented p")]
+  };
+
   /**
    * Requests the type of article from the JSON API.
    * 
@@ -242,14 +246,13 @@
     }
   };
 
-  /**
-   * Calls the functions to hide opinions.
-   */
-  const init = function () {
-    // add the style block to the page
-    createStyleElement();
+  const processCommentedList = function () {
+    processArticles(getLateLoadedArticles());
+    this.removeEventListener("click", processCommentedList);
+  };
 
-    getAllArticles()
+  const processArticles = function (articles) {
+    articles
       .map(attachArticleId)
       .forEach((article) => {
         const id = article.stuff_id;
@@ -279,6 +282,21 @@
           });
         }
       });
+  }
+
+  /**
+   * Calls the functions to hide opinions.
+   */
+  const init = function () {
+    // add the style block to the page
+    createStyleElement();
+
+    // add an event hook to the commented stories tab
+    document.querySelector("#ui-id-2").addEventListener("click", processCommentedList);
+
+    // process all the articles in the page
+    processArticles(getAllArticles());
+
   };
 
   log("START")
