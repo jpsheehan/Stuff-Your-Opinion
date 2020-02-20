@@ -132,7 +132,7 @@
    */
   const getAllArticles = function () {
     return [...document.querySelectorAll(
-      ".display-asset, .section_headlines p, #viewed li, #commented p"
+      ".display-asset, .section_headlines p, #viewed li, #commented p, .it-article-headline"
     )];
   };
 

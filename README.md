@@ -19,6 +19,10 @@ An extension for Firefox and Google Chrome for hiding opinions, reviews, and spo
 
 ## History
 
+**Dev Version**
+
+- Added the subsidiary newspaper headlines to the list of articles.
+
 **Version 0.1.4**
 
 - Implemented detection of "most commented" article stubs.
