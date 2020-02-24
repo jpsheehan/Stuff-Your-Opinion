@@ -19,9 +19,10 @@ An extension for Firefox and Google Chrome for hiding opinions, reviews, and spo
 
 ## History
 
-**Dev Version**
+**Version 0.1.5**
 
 - Added the subsidiary newspaper headlines to the list of articles.
+- Added better detection of sponsored articles.
 
 **Version 0.1.4**
 

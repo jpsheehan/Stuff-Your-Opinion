@@ -171,6 +171,10 @@
       if (introText.includes("REVIEW:")) {
         return ArticleTypes.Review;
       }
+
+      if (introText.includes("SPONSORED:")) {
+        return ArticleTypes.Sponsored;
+      }
     }
 
     return ArticleTypes.Unknown;
