@@ -16,8 +16,13 @@ An extension for Firefox and Google Chrome for hiding opinions, reviews, and spo
 
 - Provide options for the user to allow certain article types to be displayed.
 - Show the number of articles hidden on a page, including a breakdown by type.
+- Clear cache upon new version.
 
 ## History
+
+**Version 0.1.6**
+
+- Fixed a bug where the article intro text, and title were made transparent independently.
 
 **Version 0.1.5**
 

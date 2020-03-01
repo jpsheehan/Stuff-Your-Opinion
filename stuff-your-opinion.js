@@ -132,7 +132,7 @@
    */
   const getAllArticles = function () {
     return [...document.querySelectorAll(
-      ".display-asset, .section_headlines p, #viewed li, #commented p, .it-article-headline"
+      ".display-asset, .section_headlines p, #viewed li, #commented p, .network-footer .it-article-headline"
     )];
   };
 
@@ -235,6 +235,10 @@
   const storageSetArticleType = function (id, type) {
     return browser.storage.local.set({ [id]: type });
   };
+
+  // const storageClear = function () {
+  //   browser.storage.local.clear();
+  // }
 
   const requestArticleIntroText = function (id, callback) {
     try {
