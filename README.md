@@ -20,6 +20,10 @@ An extension for Firefox and Google Chrome for hiding opinions, reviews, and spo
 
 ## History
 
+**Version 0.1.7**
+
+- Added a rule to detect opinions from the URL.
+
 **Version 0.1.6**
 
 - Fixed a bug where the article intro text, and title were made transparent independently.

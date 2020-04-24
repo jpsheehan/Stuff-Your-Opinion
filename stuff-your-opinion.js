@@ -180,6 +180,19 @@
     return ArticleTypes.Unknown;
   }
 
+  	/**
+  	 *
+  	 * @param {string} url The url of the article.
+  	 * @returns {ArticleType}
+  	 */
+  	const getArticleTypeFromUrl = function (url) {
+  		if (url.indexOf("/opinion/") !== -1) {
+  			return ArticleTypes.Opinion;
+  		} else {
+  			return ArticleTypes.Unknown;
+  		}
+  	}
+
   /**
    * 
    * @param {HTMLElement} article The article.
@@ -188,6 +201,7 @@
   const getArticleTypeFromElement = function (article) {
 
     const type = getArticleTypeFromIntroText(article.innerText);
+
     if (type !== ArticleTypes.Unknown) {
       return type;
     }
@@ -200,7 +214,8 @@
       return ArticleTypes.Sponsored;
     }
 
-    return ArticleTypes.Unknown;
+    const url = article.querySelector("a").href;
+    return getArticleTypeFromUrl(url);
   }
 
   /**
